@@ -1,0 +1,7 @@
+# User-Agent rules for bidarn.fun
+User-agent: *
+Allow: /
+
+# Host & Sitemap definition
+Host: https://bidarn.fun
+Sitemap: https://bidarn.fun/sitemap.xml
