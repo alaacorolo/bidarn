@@ -1,0 +1,17 @@
+# User-Agent rules for bidarn.fun
+User-agent: *
+Allow: /
+
+# Allow AI search crawlers for AI Search visibility (GEO / AEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Host & Sitemap definition
+Host: https://bidarn.fun
+Sitemap: https://bidarn.fun/sitemap.xml
