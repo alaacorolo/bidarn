@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f39c12" />
+      <stop offset="50%" stop-color="#d4af37" />
+      <stop offset="100%" stop-color="#f9d976" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded dark background -->
+  <rect width="512" height="512" rx="128" fill="#080a10"/>
+  <!-- Gold Outer Ring -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="url(#gold-grad)" stroke-width="24" stroke-dasharray="10 10" opacity="0.3"/>
+  <circle cx="256" cy="256" r="160" fill="none" stroke="url(#gold-grad)" stroke-width="16"/>
+  <!-- Stylized Letter 'B' with Play Button integration -->
+  <path d="M190 150H270C310 150 330 170 330 200C330 220 320 235 300 245C325 255 340 275 340 310C340 342 315 362 270 362H190V150Z" fill="none" stroke="url(#gold-grad)" stroke-width="28" stroke-linejoin="round"/>
+  <path d="M190 250H280" fill="none" stroke="url(#gold-grad)" stroke-width="20"/>
+  <!-- Small glowing play arrow in center-right -->
+  <path d="M245 220V280L295 250L245 220Z" fill="url(#gold-grad)"/>
+</svg>

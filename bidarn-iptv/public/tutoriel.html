@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutoriel Installation IPTV sur Firestick, Smart TV, Android & iOS | BIDARN IPTV</title>
+  <meta name="description" content="Guides de configuration pas-à-pas pour installer votre abonnement BIDARN IPTV. Instructions faciles pour Amazon Firestick, Smart TVs, Android et Apple TV.">
+  <meta name="keywords" content="tutoriel IPTV, installer IPTV Firestick, configuration IPTV Smart TV, application IPTV Belgique, tutoriel IPTV Smarters">
+  <link rel="canonical" href="https://bidarn.fun/tutoriel">
+
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <meta name="theme-color" content="#080a10">
+  <meta name="google-site-verification" content="BXx9AhIGI76J-PIfbNtoqwVEvy5ZxuACi6Mm8FRfdXY" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    .tutorial-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    .tutorial-sidebar {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+    .tutorial-nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--border-radius-sm);
+      text-align: left;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      background: rgba(255, 255, 255, 0.01);
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      transition: all var(--transition-fast);
+    }
+    .tutorial-nav-btn:hover, .tutorial-nav-btn.active {
+      color: var(--color-text-primary);
+      background: rgba(212, 175, 55, 0.05);
+      border-color: rgba(212, 175, 55, 0.2);
+    }
+    .tutorial-nav-btn.active {
+      border-left: 4px solid var(--primary);
+    }
+    .tutorial-nav-btn i {
+      font-size: 1.25rem;
+    }
+    .tutorial-content-block {
+      display: none;
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+    .tutorial-content-block.active {
+      display: block;
+    }
+    .step-list {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    .step-item {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      color: #000;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .step-text {
+      padding-top: 0.25rem;
+    }
+    .step-text h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .alert-info-box {
+      background: rgba(212, 175, 55, 0.08);
+      border-left: 4px solid var(--primary);
+      padding: 1.5rem;
+      border-radius: var(--border-radius-sm);
+      margin-top: 2rem;
+    }
+    @media (max-width: 900px) {
+      .tutorial-grid {
+        grid-template-columns: 1fr;
+      }
+      .tutorial-sidebar {
+        position: relative;
+        top: 0;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://bidarn.fun/tutoriel#webpage",
+    "url": "https://bidarn.fun/tutoriel",
+    "name": "Tutoriel Installation IPTV sur Firestick, Smart TV, Android & iOS | BIDARN IPTV",
+    "description": "Guides de configuration pas-à-pas pour installer votre abonnement BIDARN IPTV. Instructions faciles pour Amazon Firestick, Smart TVs, Android et Apple TV.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://bidarn.fun/#website"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header Component -->
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo" id="logo">
+        <i class="fa-solid fa-play"></i> BIDARN<span>IPTV</span>
+      </a>
+      <nav class="nav-links" id="navMenu">
+        <a href="/" class="nav-link" id="navHome">Accueil</a>
+        <a href="/abonnement" class="nav-link" id="navSubscription">Abonnement</a>
+        <a href="/faq" class="nav-link" id="navFaq">FAQ</a>
+        <a href="/tutoriel" class="nav-link active" id="navTutorial">Tutoriel</a>
+        <a href="#subscribe" class="btn btn-primary btn-sm" style="padding: 0.5rem 1.25rem;" id="navCta">Démarrer</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main id="content">
+    
+    <!-- Hero Header -->
+    <section class="section-padding" style="padding-bottom: 2rem; text-align: center; position: relative;">
+      <div class="hero-bg"></div>
+      <div class="container" style="padding-top: 3rem;">
+        <h1 class="text-gradient" style="font-size: 2.75rem; margin-bottom: 1rem;">Guides d'Installation IPTV</h1>
+        <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Configurez votre abonnement BIDARN IPTV en quelques étapes simples. Sélectionnez votre appareil pour accéder aux instructions détaillées.</p>
+      </div>
+    </section>
+
+    <!-- Main Tutorial Area -->
+    <section class="container" style="padding-bottom: 7rem;">
+      <div class="tutorial-grid">
+        
+        <!-- Sidebar Selector -->
+        <aside class="tutorial-sidebar" aria-label="Sélecteur d'Appareil">
+          <button class="tutorial-nav-btn active" data-device="firestick" id="btnSelectFirestick">
+            <i class="fa-brands fa-amazon"></i> Amazon Fire Stick
+          </button>
+          <button class="tutorial-nav-btn" data-device="smarttv" id="btnSelectSmartTv">
+            <i class="fa-solid fa-tv"></i> Smart TV (Samsung/LG)
+          </button>
+          <button class="tutorial-nav-btn" data-device="android" id="btnSelectAndroid">
+            <i class="fa-brands fa-android"></i> Box TV & Android
+          </button>
+          <button class="tutorial-nav-btn" data-device="apple" id="btnSelectApple">
+            <i class="fa-brands fa-apple"></i> Apple TV & iOS
+          </button>
+        </aside>
+
+        <!-- Content Area -->
+        <article class="tutorial-content" aria-label="Instructions d'Installation">
+          
+          <!-- Firestick Guide -->
+          <div class="tutorial-content-block active" id="content-firestick">
+            <h2>Guide d'Installation sur Amazon Firestick</h2>
+            <p>La configuration de votre abonnement sur une clé Amazon Fire TV Stick est optimisée via les applications **TiviMate** ou **IPTV Smarters Pro**.</p>
+            
+            <div class="step-list">
+              <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-text">
+                  <h4>Installer l'application Downloader</h4>
+                  <p>Depuis l'écran d'accueil de votre Firestick, allez dans l'onglet **Rechercher**, tapez "Downloader" et installez l'application (icône orange).</p>
+                </div>
+              </div>
+              
+              <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-text">
+                  <h4>Autoriser les Sources Inconnues</h4>
+                  <p>Allez dans les **Paramètres** de votre Firestick > **Ma Fire TV** > **Options pour les développeurs**. Activez **Installer des applications inconnues** pour l'application Downloader. *(Si l'option Développeur est masquée, allez dans À propos et cliquez 7 fois sur le nom de votre clé)*.</p>
+                </div>
+              </div>
+
+              <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-text">
+                  <h4>Télécharger IPTV Smarters Pro</h4>
+                  <p>Ouvrez Downloader, saisissez le code de téléchargement direct `78522` et validez. L'installation d'IPTV Smarters Pro commencera automatiquement.</p>
+                </div>
+              </div>
+
+              <div class="step-item">
+                <div class="step-number">4</div>
+                <div class="step-text">
+                  <h4>Entrer vos identifiants BIDARN</h4>
+                  <p>Lancez l'application, choisissez **Se connecter avec l'API Xtream Codes**, puis saisissez le Nom d'utilisateur, le Mot de passe et l'URL du serveur reçus par e-mail ou WhatsApp. Cliquez sur **Ajouter un utilisateur** pour lancer le chargement des chaînes.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="alert-info-box">
+              <strong>Conseil de lecture :</strong> L'application TiviMate est idéale pour profiter d'une interface de grille de programmes moderne similaire au décodeur câble classique. Téléchargez-la sur Downloader en utilisant le code `272483`.
+            </div>
+          </div>
+
+          <!-- Smart TV Guide -->
+          <div class="tutorial-content-block" id="content-smarttv">
+            <h2>Guide d'Installation sur Smart TV (Samsung & LG)</h2>
+            <p>Pour vos téléviseurs connectés Samsung et LG, nous vous suggérons d'utiliser l'application **IBO Player** ou **Smart IPTV** directement téléchargeable depuis la boutique d'applications intégrée.</p>
+            
+            <div class="step-list">
+              <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-text">
+                  <h4>Télécharger IBO Player</h4>
+                  <p>Ouvrez le magasin d'applications officiel de votre téléviseur (Samsung Smart Hub ou LG Content Store), recherchez <strong>IBO Player</strong>, et procédez à l'installation.</p>
+                </div>
+              </div>
+              
+              <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-text">
+                  <h4>Récupérer l'adresse MAC du téléviseur</h4>
+                  <p>Ouvrez l'application IBO Player sur votre écran. L'écran de démarrage affichera une **adresse MAC** (Device MAC) ainsi qu'une **clé d'appareil** (Device Key). Notez-les.</p>
+                </div>
+              </div>
+
+              <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-text">
+                  <h4>Uploader votre lien de playlist M3U</h4>
+                  <p>Connectez-vous sur le site de gestion d'IBO Player (`https://iboplayer.com/device/login`) via votre mobile ou ordinateur. Entrez votre adresse MAC et votre clé, puis ajoutez l'URL de votre playlist M3U fournie lors de l'achat.</p>
+                </div>
+              </div>
+
+              <div class="step-item">
+                <div class="step-number">4</div>
+                <div class="step-text">
+                  <h4>Actualiser l'application sur la TV</h4>
+                  <p>Retournez sur votre téléviseur, relancez l'application IBO Player, et vos catégories de chaînes belges, françaises et internationales apparaîtront instantanément.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Android Guide -->
+          <div class="tutorial-content-block" id="content-android">
+            <h2>Guide d'Installation sur Box TV & Appareils Android</h2>
+            <p>Les boîtiers TV Android, Nvidia Shield et smartphones bénéficient d'un accès complet aux meilleures applications directement sur le Google Play Store.</p>
+            
+            <div class="step-list">
+              <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-text">
+                  <h4>Télécharger l'application de lecture</h4>
+                  <p>Ouvrez le Google Play Store sur votre appareil, recherchez et téléchargez l'application **IPTV Smarters Pro** ou **XCIPTV**.</p>
+                </div>
+              </div>
+              
+              <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-text">
+                  <h4>Choisir la connexion Xtream Codes</h4>
+                  <p>Ouvrez l'application installée et sélectionnez la méthode de connexion via l'**API Xtream Codes** pour une meilleure stabilité.</p>
+                </div>
+              </div>
+
+              <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-text">
+                  <h4>Renseigner vos informations de connexion</h4>
+                  <p>Entrez l'identifiant, le mot de passe et l'URL du serveur que vous avez reçus lors de votre abonnement. Cliquez sur connexion pour synchroniser la liste.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Apple Guide -->
+          <div class="tutorial-content-block" id="content-apple">
+            <h2>Guide d'Installation sur Apple TV, iPhone & iPad</h2>
+            <p>Pour vos équipements Apple, nous recommandons le lecteur de flux **Smarters Player Lite** disponible gratuitement dans l'App Store.</p>
+            
+            <div class="step-list">
+              <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-text">
+                  <h4>Installer Smarters Player Lite</h4>
+                  <p>Ouvrez l'App Store Apple sur votre iPhone, iPad ou Apple TV. Recherchez <strong>Smarters Player Lite</strong> et installez l'application.</p>
+                </div>
+              </div>
+              
+              <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-text">
+                  <h4>Ajouter la playlist par API</h4>
+                  <p>Lancez l'application, acceptez les conditions générales, et optez pour l'ajout de compte via l'**API Xtream Codes**.</p>
+                </div>
+              </div>
+
+              <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-text">
+                  <h4>Synchroniser et Démarrer</h4>
+                  <p>Renseignez vos identifiants, validez, et laissez l'application charger les chaînes et guides en direct depuis nos serveurs sécurisés.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Component -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <a href="/" class="logo" style="margin-bottom: 1.5rem;" id="footerLogo">
+            <i class="fa-solid fa-play"></i> BIDARN<span>IPTV</span>
+          </a>
+          <p>Fournisseur leader d'abonnements IPTV premium en Belgique. Regardez plus de 60 000 chaînes mondiales et VODs en 4K.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h5>Liens Rapides</h5>
+          <div class="footer-links">
+            <a href="/">Accueil</a>
+            <a href="/abonnement">Tarifs & Offres</a>
+            <a href="/faq">Support & FAQ</a>
+            <a href="/tutoriel">Guides d'Installation</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h5>Applications IPTV</h5>
+          <div class="footer-links">
+            <a href="/tutoriel#tivimate">TiviMate Player</a>
+            <a href="/tutoriel#iptvsmarters">IPTV Smarters Pro</a>
+            <a href="/tutoriel#iboplayer">IBO Player</a>
+            <a href="/tutoriel#smartiptv">Smart IPTV</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h5>Assistance Technique</h5>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>support@bidarn.fun</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Assistance en Direct via WhatsApp 24/7</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 BIDARN IPTV. Tous droits réservés.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Politique de Confidentialité</a>
+          <a href="#">Conditions Générales</a>
+          <a href="#">Politique de Remboursement</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabButtons = document.querySelectorAll('.tutorial-nav-btn');
+      const contentBlocks = document.querySelectorAll('.tutorial-content-block');
+
+      if(tabButtons.length === 0 || contentBlocks.length === 0) return;
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          const device = button.getAttribute('data-device');
+          contentBlocks.forEach(block => {
+            if (block.getAttribute('id') === 'content-' + device) {
+              block.classList.add('active');
+            } else {
+              block.classList.remove('active');
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
